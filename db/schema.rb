@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170622150640) do
   create_table "products", force: :cascade do |t|
     t.string "prodname"
     t.string "prodtype"
+    t.string "description"
     t.float "listprice"
   end
 
@@ -22,6 +23,8 @@ ActiveRecord::Schema.define(version: 20170622150640) do
     t.string "firstname"
     t.string "lastname"
     t.string "email"
+    t.string "username"
+    t.string "usertype"
   end
 
 end

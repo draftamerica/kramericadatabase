@@ -34,18 +34,23 @@ get '/contact' do
 	erb :contact
 end
 
-post '/contact' do
-  @firstname = params[:firstname]
-  @lastname = params[:lastname]
-  @email = params[:email]
-  @username = params[:username]
-  @usertype = params[:usertype]
-  newuser = {:firstname=>@firstname, :lastname=>@lastname, :email=>@email, :username=>@username, :usertype=>@usertype}
-  @@user_data << newuser
-  puts "***** @@user_data: #{@@user_data}"
-  erb :about
-end
+post '/users' do
+	@user = User.new(
+	    firstname: params[:firstname],
+	    lastname: params[:lastname],
+	    email: params[:email],
+	    username: params[:username],
+	    usertype: params[:usertype]
+	  )
 
+	  if @user.save
+	    puts 'saved new user!'
+	    puts @user
+	  end
+
+	  erb :user
+
+	end
 #===placeorder====#
 post '/placeorder' do
 	puts "***** params.inspect: #{params.inspect}"
