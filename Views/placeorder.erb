@@ -1,0 +1,63 @@
+<div class="menu">
+        <div class="menu-sub">
+    <a href="about"><b>WHO ARE WE?</b></a>
+    <a href="gallery"><b>BUY PRODUCTS</b></a>
+    <a href="contact"><b>WANNA INTERN? EMAIL US</b></a>
+</div>
+</div>
+
+<h1 align="center">THIS IS YOUR ORDER PAGE!</h1>
+
+<p align="center"><b>Here is a summary of what you just ordered:</b></p>
+
+<br>
+
+<div>
+<% puts "**erbfi*** @photoArray: #{@photoArray}" %>
+<%= '&nbsp;' %>
+<% @photoArray.each do |item| %>
+    <img class="Kramers" src="<%=item %>">
+<% end %>
+</div>
+
+
+<!-- class Lion < Animal
+    attr_accessor :run
+    def initialize(run)
+        puts "\n== initialize:Lion =="
+        @run = run
+    end
+    def first_ability
+        puts "\n scratch"
+    end
+end
+
+puts "==instances=="
+lion_1 = Lion.new("fast")
+lion_1.name = "Nike"
+lion_1.location = "Africa"
+lion_1.population = "Endangered"
+puts "lion_1.inspect, #{lion_1.inspect}"
+
+def combineArrays()
+    movieActors = {}
+    combineArrays = []
+    actorArray = ["Bradley Cooper", "Charlize Theron", "Edward Norton", "Tommy Lee Jones"]
+    puts "** actorArray: #{actorArray}"
+    movieArray = ["Billy Madison", "American Psycho", "Limitless", "Wedding Crashers"]
+    puts "** movieArray: #{movieArray}"
+    for item in movieArray
+    	puts "** item: #{item}"
+    end
+    movieArray.each_with_index do |movie, index|
+    	puts "** index/movie: #{index}: #{movie}"
+        nextActor = actorArray[index]
+        movieActors[:actor] = nextActor
+        movieActors[:movie] = movie
+        combineArrays << movieActors
+        movieActors = {} #REDEFINE EMPTY HASH WITHIN LOOP
+    end
+    puts "** combineArrays: #{combineArrays}"
+end
+combineArrays
+ -->
