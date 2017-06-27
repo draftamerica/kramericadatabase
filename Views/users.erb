@@ -1,21 +1,25 @@
-<div class="profiledata">
-    <p class="aboutclass" align="center">Here is your profile data:</p>
-    <%= 'FIRST NAME: &nbsp;' %>
-    <%= @user.firstname %>
-</div>
-<div class="profiledata">
-    <%= 'LAST NAME: &nbsp; ' %>
-    <%= @user.lastname %>
-</div>
-<div class="profiledata">
-    <%= 'EMAIL: &nbsp;' %>
-    <%= @user.email %>
-</div>
-<div class="profiledata">
-    <%= 'USER NAME: &nbsp;' %>
-    <%= @user.username %>
-</div>
-<div class="profiledata">
-    <%= 'USER TYPE: &nbsp;' %>
-    <%= @user.usertype %>
-</div>
+<% @users.each do |u| %>
+
+    <div class="profiledata">
+        <p class="aboutclass" align="center">Here is your profile data:</p>
+        <%= 'FIRST NAME: &nbsp;' %>
+        <%= u.firstname %>
+    </div>
+    <div class="profiledata">
+        <%= 'LAST NAME: &nbsp; ' %>
+        <%= u.lastname %>
+    </div>
+    <div class="profiledata">
+        <%= 'EMAIL: &nbsp;' %>
+        <%= u.email %>
+    </div>
+    <div class="profiledata">
+        <%= 'USER NAME: &nbsp;' %>
+        <%= u.username %>
+    </div>
+    <div class="profiledata">
+        <%= 'USER TYPE: &nbsp;' %>
+        <%= u.usertype %>
+    </div>
+
+<% end %>

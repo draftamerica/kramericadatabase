@@ -2,6 +2,7 @@
 require "sinatra"
 require 'sinatra/activerecord'
 require "sinatra/reloader"
+require "./models"
 
 # ======= database =======
 
@@ -34,23 +35,41 @@ get '/contact' do
 	erb :contact
 end
 
+get '/users' do
+    @users = User.all
+
+    erb :users
+end
+
 post '/users' do
-	@user = User.new(
-	    firstname: params[:firstname],
-	    lastname: params[:lastname],
-	    email: params[:email],
-	    username: params[:username],
-	    usertype: params[:usertype]
-	  )
 
-	  if @user.save
-	    puts 'saved new user!'
-	    puts @user
-	  end
+  @user = User.new(
+    firstname: params[:firstname],
+    lastname: params[:lastname],
+    email: params[:email],
+    username: params[:username],
+    usertype: params[:usertype]
+  )
 
-	  erb :user
+  if @user.save
+    puts 'saved new user!'
+    puts @user
+  end
 
-	end
+  erb :user
+
+end
+
+get '/getUserOne' do
+    @user = User.find(2)
+    erb :user
+end
+
+get '/getUserOne/:id' do
+    @user = User.find(params[:id])
+    erb :user
+end
+
 #===placeorder====#
 post '/placeorder' do
 	puts "***** params.inspect: #{params.inspect}"
